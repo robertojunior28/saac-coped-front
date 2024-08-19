@@ -1,7 +1,6 @@
 import React from "react";
 import {Route, BrowserRouter, Switch, Redirect} from 'react-router-dom';
 
-import HomePage from "../screens/HomePage/HomePage";
 import Login from "../screens/Login/Login";
 
 import { AuthConsumer } from "./SessionProvider";
@@ -30,7 +29,7 @@ function AppRoutes(props) {
         <BrowserRouter>
             <Switch>
 
-            <Route component = { HomePage } path="/" exact/>
+            <Route component = { Login } path="/" exact/>
             <Route path="/login">
                 {props.isAuthenticated ? (
                 <Redirect to="/" />

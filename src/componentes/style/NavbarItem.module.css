@@ -1,0 +1,15 @@
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  color: aliceblue;
+  text-decoration: none;
+  padding-right: 20px;
+  padding-top: 60px;
+  display: inline-block;
+}
+
+.navLink:hover {
+  font-size: 18px;
+}

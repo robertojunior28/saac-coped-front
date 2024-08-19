@@ -1,40 +1,23 @@
 import React from "react";
 import NavbarItem from "./NavbarItem";
 import { AuthConsumer } from "../main/SessionProvider";
+import styles from "./style/NavBar.module.css";
 
 function NavBar(props) {
   return (
-    <div className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-      <div className="container">
-        <a href="/" className="navbar-brand">
-          SAAC
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarResponsive">
-          <ul className="navbar-nav">
-            <NavbarItem
-              render={!props.isAuthenticated}
-              href="/login"
-              label="Login"
-            />
-            <NavbarItem
-              render={props.isAuthenticated}
-              href="/login"
-              onClick={props.logout}
-              label="Sair"
-            />
-          </ul>
+    <div className={styles.root}>
+      <div className={styles.container}>
+        <div>
+          <h1 style={{color: 'white', fontSize: '62px', fontFamily: 'serif'}}>SAAC</h1>
+          <p>Sistema de Avaliação de Alunos pela COPED</p>
         </div>
+
+        <NavbarItem
+          render={props.isAuthenticated}
+          href="/login"
+          onClick={props.logout}
+          label="Sair"
+        />
       </div>
     </div>
   );
